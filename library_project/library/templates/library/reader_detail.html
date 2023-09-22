@@ -1,0 +1,11 @@
+{% extends 'library/layout.html' %}
+
+{% block content %}
+    <h1>Информация о читателе</h1>
+    <p>Фамилия: {{ reader.last_name }}</p>
+    <p>Имя: {{ reader.first_name }}</p>
+    <p>Отчество: {{ reader.middle_name }}</p>
+
+    <a href="{% url 'book_list' reader.id %}">Арендовать книгу</a><br>
+    <a href="{% url 'return_book' reader.id %}">Вернуть книгу</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'library/layout.html' %}
+
+{% block content %}
+    <h1>Выберете свои ФИО для входа в систему:</h1>
+    <ul>
+        {% for reader in readers %}
+            <li><a href="{% url 'reader_detail' reader.id %}">{{ reader.last_name }} {{ reader.first_name }} {{ reader.middle_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Создать читателя:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Добавить читателя"><br>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

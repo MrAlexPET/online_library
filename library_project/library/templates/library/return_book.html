@@ -1,0 +1,13 @@
+{% extends 'library/layout.html' %}
+
+{% block content %}
+    <h1>Возврат книги</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="book_pk">Введите код книги для возврата:</label>
+        <input type="text" id="book_pk" name="book_pk">
+        <button type="submit">Вернуть книгу</button><br>
+        <span>{{ error }}</span><br>
+        <a href="{% url 'readers' %}">Выйти из системы</a>
+    </form>
+{% endblock %}

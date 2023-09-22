@@ -1,0 +1,24 @@
+{% extends 'library/layout.html' %}
+
+{% block content %}
+    <h2>Список доступных книг:</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                Название книги: {{ book.title }} (Код: {{ book.pk }})
+                <br>
+                Автор: {{ book.author.name }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Аренда книги:</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="book_pk">Введите код книги:</label>
+        <input type="text" id="book_pk" name="book_pk">
+        <button type="submit">Арендовать</button><br>
+        <span>{{ error }}</span><br>
+        <a href="{% url 'readers' %}">Выйти из системы</a>
+    </form>
+{% endblock %}
