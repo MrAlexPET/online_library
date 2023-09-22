@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'library_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'library',  # Имя вашей базы данных
-        'USER': 'root',  # Имя пользователя базы данных
-        'PASSWORD': 'alex11',  # Пароль пользователя базы данных
+        'NAME': 'database_name',  # Имя вашей базы данных
+        'USER': 'user_name',  # Имя пользователя базы данных
+        'PASSWORD': 'user_password',  # Пароль пользователя базы данных
         'HOST': 'localhost',  # Адрес сервера MySQL (обычно localhost)
         'PORT': '3306',
     }
