@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+# -*- coding: utf-8 -*-
 
 from pathlib import Path
 
@@ -77,10 +78,10 @@ WSGI_APPLICATION = 'library_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database_name',  # Имя вашей базы данных
+        'NAME': 'library',  # Имя вашей базы данных
         'USER': 'user_name',  # Имя пользователя базы данных
         'PASSWORD': 'user_password',  # Пароль пользователя базы данных
-        'HOST': 'localhost',  # Адрес сервера MySQL (обычно localhost)
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
