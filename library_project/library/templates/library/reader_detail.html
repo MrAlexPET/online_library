@@ -6,6 +6,30 @@
     <p>Имя: {{ reader.first_name }}</p>
     <p>Отчество: {{ reader.middle_name }}</p>
 
-    <a href="{% url 'book_list' reader.id %}">Арендовать книгу</a><br>
-    <a href="{% url 'return_book' reader.id %}">Вернуть книгу</a>
+    <h2>История аренды книг:</h2>
+    {% if books %}
+    <ul>
+        {% for book_loan in books %}
+            <li>
+                Название книги: {{ book_loan.book.title }}
+                <br>
+                Автор: {{ book_loan.book.author.name }}
+                <br>
+                Дата аренды: {{ book_loan.loan_date }}
+                <br>
+                Дата возврата: {{ book_loan.return_date }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Этот читатель не брал книги в аренду.</p>
+    {% endif %}
+
+<!--    <a href="{% url 'book_list' reader.id %}">Арендовать книгу</a><br>-->
+    <div class="rent-return">
+        <button onclick="window.location.href='{% url 'book_list' reader.id %}'">Арендовать книгу</button><br>
+        <button onclick="window.location.href='{% url 'return_book' reader.id %}'">Вернуть книгу</button><br>
+        <button onclick="window.location.href='{% url 'readers' %}'">Выйти из системы</button><br>
+    </div>
+<!--    <a href="{% url 'return_book' reader.id %}">Вернуть книгу</a>-->
 {% endblock %}

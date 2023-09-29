@@ -60,12 +60,13 @@ def reader_detail(request, reader_id):
     # }
 
     reader = get_object_or_404(Reader, pk=reader_id)
+    books = BookLoan.objects.filter(reader_id=reader)
     # books = Book.objects.filter(reader=reader)
     # books = BookLoan.objects.filter(reader=reader)
 
     data = {
         'reader': reader,
-        # 'books': books
+        'books': books
     }
 
     return render(request, 'library/reader_detail.html', data)

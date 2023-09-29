@@ -8,6 +8,7 @@
         <input type="text" id="book_pk" name="book_pk">
         <button type="submit">Вернуть книгу</button><br>
         <span>{{ error }}</span><br>
-        <a href="{% url 'readers' %}">Выйти из системы</a>
+<!--        <a href="{% url 'readers' %}">Выйти из системы</a>-->
     </form>
+    <button onclick="window.location.href='{% url 'readers' %}'">Выйти из системы</button><br>
 {% endblock %}

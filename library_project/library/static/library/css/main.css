@@ -1,3 +1,22 @@
 .main {
     text-align: center;
 }
+
+.user-button {
+  width: 300px;
+}
+
+.container {
+  float: left;
+  width: 70%;
+  padding-right: 20px;
+}
+
+.add-book-button {
+  float: right;
+}
+
+.rent-return button {
+  width: 150px;
+  margin-bottom: 7px;
+}

@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'library',  # Имя вашей базы данных
-        'USER': 'user_name',  # Имя пользователя базы данных
-        'PASSWORD': 'user_password',  # Пароль пользователя базы данных
+        'USER': 'root',  # Имя пользователя базы данных
+        'PASSWORD': 'alex11',  # Пароль пользователя базы данных
         'HOST': 'localhost',
         'PORT': '3306',
     }
